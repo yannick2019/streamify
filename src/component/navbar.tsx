@@ -106,7 +106,7 @@ useEffect(() => {
           <span className="streamify mx-3">Streamify</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" className="rounded-5 mx-3 p-3 border" style={{ backgroundColor: "rgba(83, 187, 144, 0.7)" }} />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" role="navigation">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
             <Nav.Link className="dim mx-3" href="/home" style={{ color: "#53bb90" }}>
               HOME

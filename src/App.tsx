@@ -24,9 +24,9 @@ import TopRatedMovies from './component/top_rated_movies';
 import Upcoming from './Pages/upcoming';
 import AccessData from './Pages/change_access_data';
 import Subscribe from './Pages/subscribe';
-import PrivateRoute from './component/PrivateRoute';
+//import PrivateRoute from './component/PrivateRoute';
 
-/*
+
 function App() {
   return (
     <>
@@ -68,12 +68,12 @@ function App() {
 }
 
 export default App;
-*/
+
 
 
 /*  Private routes  */
 
-
+/*
 function App() {
   return (
     <>
@@ -122,3 +122,5 @@ function App() {
 }
 
 export default App;
+
+*/
