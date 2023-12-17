@@ -135,7 +135,9 @@ useEffect(() => {
                 <button type="button" className="closeSearch"
                   onClick={() => {
                     setSearch("");
-                    searchRef.current.value = "";
+                    if (searchRef.current) {
+                      searchRef.current.value = "";
+                    }
                   }}
                 >
                   <IoClose />
