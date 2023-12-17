@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; 
+import { useState, useEffect, useRef } from 'react'; 
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './slider.css';
@@ -14,7 +14,7 @@ interface Movie {
 
 function MovieSlider() {
     const [movies, setMovies] = useState<Movie[]>([]);
-    const scrollContainerRef = useRef(null);
+    const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
       const apiUrl = 'https://streamify-api.000webhostapp.com/get_movies.php';
@@ -36,7 +36,7 @@ function MovieSlider() {
     }, []);
 
     useEffect(() => {
-      const handleWheel = (e:string) => {
+      const handleWheel = (e: WheelEvent) => {
         if (scrollContainerRef.current) {
           scrollContainerRef.current.scrollLeft += e.deltaY;
         }
