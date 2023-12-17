@@ -15,10 +15,8 @@ interface serie {
   vote_average: number;
 }
 
-function series() {
+function Series() {
   const [series, setSeries] = useState<serie[]>([]);
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
 
   useEffect(() => {
     const apiUrl = 'https://streamify-api.000webhostapp.com/get_series.php';
@@ -80,4 +78,4 @@ function series() {
 }
 
 
-export default series;
+export default Series;

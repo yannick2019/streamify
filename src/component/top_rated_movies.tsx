@@ -12,7 +12,7 @@ interface Movie {
 
 function TopRatedMovies() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const apiUrl = 'https://streamify-api.000webhostapp.com/top_rated_movies.php';
@@ -36,7 +36,7 @@ function TopRatedMovies() {
   }, []);
 
   useEffect(() => {
-    const handleWheel = (e) => {
+    const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         scrollContainerRef.current.scrollLeft += e.deltaY;
       }

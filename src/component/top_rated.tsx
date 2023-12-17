@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import './top_rated.css';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ interface Serie {
 
 function TopRatedSeries() {
   const [series, setSeries] = useState<Serie[]>([]);
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const apiUrl = 'https://streamify-api.000webhostapp.com/top_rated_series.php';
@@ -36,7 +36,7 @@ function TopRatedSeries() {
   }, []);
 
   useEffect(() => {
-    const handleWheel = (e) => {
+    const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         scrollContainerRef.current.scrollLeft += e.deltaY;
       }

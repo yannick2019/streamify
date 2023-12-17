@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; 
+import { useState, useEffect, useRef } from 'react'; 
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './slider.css';
@@ -14,7 +14,7 @@ interface Serie {
 
 function SeriesSlider() {
     const [series, setSeries] = useState<Serie[]>([]);
-    const scrollContainerRef = useRef(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
       const apiUrl = 'https://streamify-api.000webhostapp.com/get_series.php';
@@ -36,7 +36,7 @@ function SeriesSlider() {
     }, []);
 
     useEffect(() => {
-      const handleWheel = (e) => {
+      const handleWheel = (e: WheelEvent) => {
         if (scrollContainerRef.current) {
           scrollContainerRef.current.scrollLeft += e.deltaY;
         }
