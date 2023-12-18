@@ -32,30 +32,29 @@ function App() {
     <>
       <Router>
         <Routes>
-        <Route path="/update-data/:username" element={<AccessData/>} />
-        <Route path="/top_rated_movies" element={<TopRatedMovies/>} />
-        <Route path="/top_rated" element={<TopRatedSeries/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/serie_slider" element={<SeriesSlider />} />
-        <Route path="/slider" element={<Slider />} />
-          <Route path="/streamify" element={<Presentation />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path='/' element={<Movies /> } />
-          <Route path='/series' element={<Series /> } />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/movie/:id" element={ <SingleMovie /> } />
-          <Route path="/serie/:id" element={ <SingleSerie /> } />
-          <Route path="/movie/trailer/:id" element={ <TrailerPage /> } />
-          <Route path="/upcoming" element={<Upcoming /> } />
-          <Route path="/subscribe" element={<Subscribe /> } />
-          <Route path="/other" element={
+          <Route path="update-data/:username" element={<AccessData/>} />
+          <Route path="top_rated_movies" element={<TopRatedMovies/>} />
+          <Route path="top_rated" element={<TopRatedSeries/>} />
+          <Route path="profile" element={<Profile/>} />
+          <Route path="home" element={<Home />} />
+          <Route path="serie_slider" element={<SeriesSlider />} />
+          <Route path="slider" element={<Slider />} />
+          <Route path="/" element={<Presentation />} />
+          <Route path="home" element={<Home />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="footer" element={<Footer />} />
+          <Route path='movies' element={<Movies /> } />
+          <Route path='series' element={<Series /> } />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="reset-password" element={<ResetPassword />} />
+          <Route path="movie/:id" element={ <SingleMovie /> } />
+          <Route path="serie/:id" element={ <SingleSerie /> } />
+          <Route path="movie/trailer/:id" element={ <TrailerPage /> } />
+          <Route path="upcoming" element={<Upcoming /> } />
+          <Route path="subscribe" element={<Subscribe /> } />
+          <Route path="other" element={
               <>
               <Navbar />
               <Jumbotron />
