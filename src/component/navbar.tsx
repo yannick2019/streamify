@@ -123,16 +123,16 @@ useEffect(() => {
         <Navbar.Toggle aria-controls="navbarScroll" className="rounded-5 mx-3 p-3 border" style={{ backgroundColor: "rgba(83, 187, 144, 0.7)" }} />
         <Navbar.Collapse id="navbarScroll" role="navigation">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-            <NavLink className="dim mx-3" to={'/streamify/home'} style={{ color: "#53bb90" }}>
+            <NavLink className="dim mx-3 text-decoration-none bg-transparent" to={'/streamify/home'} style={{ color: "#53bb90" }}>
               HOME            
             </NavLink>
-            <NavLink className="dim mx-3" to={'/streamify/movies'} style={{ color: "#53bb90" }}>
+            <NavLink className="dim mx-3 text-decoration-none bg-transparent" to={'/streamify/movies'} style={{ color: "#53bb90" }}>
               MOVIES            
             </NavLink>
-            <NavLink className="dim mx-3" to={'/streamify/series'} style={{ color: "#53bb90" }}>
+            <NavLink className="dim mx-3 text-decoration-none bg-transparent" to={'/streamify/series'} style={{ color: "#53bb90" }}>
               SERIES              
             </NavLink>
-            <NavLink className="dim mx-3" to={'/streamify/upcoming'} style={{ color: "#53bb90" }}>
+            <NavLink className="dim mx-3 text-decoration-none bg-transparent" to={'/streamify/upcoming'} style={{ color: "#53bb90" }}>
               UPCOMING             
             </NavLink>
           </Nav>
