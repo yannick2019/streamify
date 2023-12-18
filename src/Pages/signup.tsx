@@ -2,6 +2,7 @@
 import { FormEvent } from 'react';
 import { ChangeEvent, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './login_singup.css';
 
 function Signup() {
@@ -118,7 +119,7 @@ function Signup() {
               <button className='btn'>Sign Up</button>
             </div>
             <p className='text-end mt-2'>
-              Already Registered? <a href='/streamify/login' className='link_login ms-2'>Log in</a>
+              Already Registered? <Link to={'/streamify/login'} className='link_login ms-2'>Log in</Link>
             </p>
             {registrationMessage && (
               <p className='text-center text-success'>{registrationMessage}</p>
