@@ -23,27 +23,27 @@ const Footer = () => {
           </div>
           <div className="col-12 col-sm-6 col-md-3 mb-4 mt-4">
             <p className="h5 mb-4" style={{ fontWeight: 600 }}>Streamify</p>
-            <div className="cursor-pointer">
+            <ul className="cursor-pointer">
               <li className="liste1"><Link className="link" to={"/streamify/privacy"}>Privacy Policy</Link></li>
               <li className="liste1"><Link className="link" to={"/streamify/cookies"}>Cookies</Link></li>
               <li className="liste1"><Link className="link" to={"/streamify/profile"}>Profile</Link></li>
-            </div>
+            </ul>
           </div>
           <div className="col-12 col-sm-6 col-md-3 mb-4 mt-4">
             <p className="h5 mb-4" style={{ fontWeight: 600 }}>Help</p>
-            <div className="cursor-pointer">
+            <ul className="cursor-pointer">
               <li className="liste1"><Link className="link" to={"/streamify/signup"}>Sign Up</Link></li>
               <li className="liste1"><Link className="link" to={"/streamify/login"}>Sign In</Link></li>
-            </div>
+            </ul>
           </div>
           <div className="col-12 col-sm-6 col-md-3 mb-4 mt-4">
             <p className="h5 mb-4" style={{ fontWeight: 600 }}>Pages</p>
-            <div className="cursor-pointer">
+            <ul className="cursor-pointer">
               <li className="liste1"><Link className="link" to={"/streamify/home"}>Home</Link></li>
               <li className="liste1"><Link className="link" to={"/streamify/movies"}>Movie</Link></li>
               <li className="liste1"><Link className="link" to={"/streamify/series"}>Tv Show</Link></li>
               <li className="liste1"><Link className="link" to={"/streamify/upcoming"}>Upcoming</Link></li>
-            </div>
+            </ul>
           </div>
         </div>
         <small className="text-center mt-5">&copy; Streamify, 2023. All rights reserved.</small>

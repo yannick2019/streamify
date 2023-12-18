@@ -51,8 +51,9 @@ function AccessData() {
       <div className="overlay position-absolute">
       </div>
       <div className="form-user text-center">
-        <h2 className="fw-bold pol">Choose you new Username</h2>
+        <h1 className="fw-bold pol">Profile</h1>
         <form onSubmit={handleSubmit}>
+          <h2 className="fw-bold pol">Choose you new Username</h2>
           <label className="m-4" style={{ color: "#0071b8" }} htmlFor="">
             <h3>Username:</h3>
           </label>
