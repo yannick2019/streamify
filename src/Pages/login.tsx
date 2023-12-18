@@ -102,9 +102,9 @@ function Login() {
               </div>
               <div>
                 <p> If you don't have a account you can
-                <a href='/streamify/signup' className='link_login ms-2'>
+                <Link to={'/streamify/signup'} className='link_login ms-2'>
                   Register here
-                </a> | <a href='/streamify/home' className='link_login ms-2'>Home page</a>
+                </Link> | <Link to={'/streamify/home'} className='link_login ms-2'>Home page</Link>
               </p>
               </div>
             </form>
