@@ -39,7 +39,7 @@ function App() {
           <Route path="/streamify/streamify/home" element={<Home />} />
           <Route path="/streamify/serie_slider" element={<SeriesSlider />} />
           <Route path="/streamify/slider" element={<Slider />} />
-          <Route path="/streamify/presentation" element={<Presentation />} />
+          <Route path="/streamify/" element={<Presentation />} />
           <Route path="/streamify/profile" element={<Profile />} />
           <Route path="/streamify/home" element={<Home />} />
           <Route path="/streamify/privacy" element={<Privacy />} />
