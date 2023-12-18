@@ -68,7 +68,7 @@ return (
   <h1 className='titreSeries mov' style={{ textAlign: 'center', marginTop: '2rem', color:'#0071b8', fontSize:'40px', zIndex:6 }}>Series</h1>
   <div className='d-flex align-items-center mx-auto ' style={{ overflowX: 'auto' }} ref={scrollContainerRef}>
     {series.map((serie) => (
-      <Link to={`/serie/${serie.id}`} key={serie.id}>
+      <Link to={`/streamify/serie/${serie.id}`} key={serie.id}>
         <div className='card d-flex justify-content-center h-50 container1'>
           <img src={`https://image.tmdb.org/t/p/w780${serie.poster_path}`} alt={serie.name} className='img fadex' />
           <h5 className='movie-title'>{serie.name}</h5>

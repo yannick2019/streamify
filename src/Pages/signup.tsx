@@ -33,7 +33,7 @@ function Signup() {
 
         // Use setTimeout for redirection after a delay (e.g., 2000 milliseconds)
         setTimeout(() => {
-          window.location.href = '/login';
+          window.location.href = '/streamify/login';
         }, 2000);
       } else {
         setRegistrationMessage('Registration failed. Please try again.');
@@ -118,7 +118,7 @@ function Signup() {
               <button className='btn'>Sign Up</button>
             </div>
             <p className='text-end mt-2'>
-              Already Registered? <a href='login' className='link_login ms-2'>Log in</a>
+              Already Registered? <a href='/streamify/login' className='link_login ms-2'>Log in</a>
             </p>
             {registrationMessage && (
               <p className='text-center text-success'>{registrationMessage}</p>

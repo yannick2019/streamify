@@ -69,7 +69,7 @@ function TopRatedSeries() {
     <h1 className='mov  text-center mb-5' style={{color:'#0071b8'}}>Top Rated Series</h1>
     <div className='d-flex w-75  align-items-center mx-auto' style={{ overflowX: 'auto' }} ref={scrollContainerRef}>
       {series.map((serie) => (
-        <Link to={`/serie/${serie.id}`} key={serie.id}>
+        <Link to={`/streamify/serie/${serie.id}`} key={serie.id}>
           <div className='d-flex  justify-content-center h-50 container1 '>
             <div className='overlay-1'></div>
             <img className='img-top' src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`} alt={serie.name} />

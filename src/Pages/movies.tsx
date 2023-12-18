@@ -61,7 +61,7 @@ function Movies() {
         <Row xs={1} sm={2} md={3} lg={4} xl={5} className='g-4'>
           {movies.map((movie) => (
             <Col key={movie.id}>
-              <Link to={`/movie/${movie.id}`} className='card movie-link'>
+              <Link to={`/streamify/movie/${movie.id}`} className='card movie-link'>
                 <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} className='img' />
                 <h5 className='movie-title'>{movie.title}</h5>
                 <p className='rating'>Rating: {renderStars(movie.vote_average)}</p>          

@@ -77,7 +77,7 @@ const renderStars = (rating: number) => {
                 Rating: {renderStars(userRating !== null ? userRating : movie.vote_average)}
               </p>
               <p>{movie.overview}</p>
-              <Link to={`/movie/trailer/${movie.id}`} className="btn m-2">
+              <Link to={`/streamify/movie/trailer/${movie.id}`} className="btn m-2">
                 Watch Trailer
               </Link>
               <div>

@@ -69,7 +69,7 @@ function MovieSlider() {
         <h1 className='titreMovies mov' style={{ textAlign: 'center', marginTop: '2rem', color:'#53bb90', fontSize:'40px', zIndex:6 }}>Movies</h1>
         <div className='d-flex  align-items-center mx-auto' style={{ overflowX: 'auto' }} ref={scrollContainerRef}>
           {movies.map((movie) => (
-            <Link to={`/movie/${movie.id}`} key={movie.id}>
+            <Link to={`/streamify/movie/${movie.id}`} key={movie.id}>
               <div className='card  d-flex justify-content-center h-50 container1'>
                 <img src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`} alt={movie.title} className='img fadex' />
                 <h5 className='movie-title'>{movie.title}</h5>

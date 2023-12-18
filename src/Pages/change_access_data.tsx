@@ -29,9 +29,9 @@ function AccessData() {
         if (response.data.success) {
           if (newUsername) {
             localStorage.setItem("username", newUsername);
-            window.location.assign(`/update-data/${newUsername}`);
+            window.location.assign(`/streamify/update-data/${newUsername}`);
           } else {
-            window.location.assign(`/update-data/${username}`);
+            window.location.assign(`/streamify/update-data/${username}`);
           }
           alert("Data has been saved.");
         } else {
@@ -94,11 +94,11 @@ function AccessData() {
           >
             save
           </button>
-          <Link className="  fs-6  text-decoration-none"  style={{color:'#0071b8'}} to={"/home"}>
+          <Link className="  fs-6  text-decoration-none"  style={{color:'#0071b8'}} to={"/streamify/home"}>
             {" "}
             Home page
           </Link> |
-          <Link className="  fs-6  text-decoration-none"  style={{color:'#0071b8'}} to={"/profile"}>
+          <Link className="  fs-6  text-decoration-none"  style={{color:'#0071b8'}} to={"/streamify/profile"}>
             {" "}
             Profile page
           </Link>

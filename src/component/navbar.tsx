@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { IoClose } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from 'axios';
 
@@ -92,11 +92,26 @@ useEffect(() => {
     return fullStars;
   };
 
+  const isAuthenticated = () => {
+    return Boolean(localStorage.getItem('token'));
+  }
+
+  const handleLogin = () => {
+    navigate('/streamify/login');
+  };
+
+  const handleProfileClick = (e: React.MouseEvent) => {
+    if (!isAuthenticated()) {
+      e.preventDefault();
+      navigate('/streamify/login');
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     localStorage.removeItem('role');
-    navigate('/login');
+    navigate('/streamify/login');
   };
 
   return (
@@ -108,16 +123,16 @@ useEffect(() => {
         <Navbar.Toggle aria-controls="navbarScroll" className="rounded-5 mx-3 p-3 border" style={{ backgroundColor: "rgba(83, 187, 144, 0.7)" }} />
         <Navbar.Collapse id="navbarScroll" role="navigation">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-            <Nav.Link className="dim mx-3" href="/home" style={{ color: "#53bb90" }}>
+            <Nav.Link className="dim mx-3" href="/streamify/home" style={{ color: "#53bb90" }}>
               HOME
             </Nav.Link>
-            <Nav.Link className="dim mx-3" href="/movies" style={{ color: "#53bb90" }}>
+            <Nav.Link className="dim mx-3" href="/streamify/movies" style={{ color: "#53bb90" }}>
               MOVIES
             </Nav.Link>
-            <Nav.Link className="dim mx-3" href="/series" style={{ color: "#53bb90" }}>
+            <Nav.Link className="dim mx-3" href="/streamify/series" style={{ color: "#53bb90" }}>
               SERIES
             </Nav.Link>
-            <Nav.Link className="dim mx-3 " href="/upcoming" style={{ color: "#53bb90" }}>
+            <Nav.Link className="dim mx-3 " href="/streamify/upcoming" style={{ color: "#53bb90" }}>
               UPCOMING
             </Nav.Link>
           </Nav>
@@ -152,13 +167,13 @@ useEffect(() => {
                     key={index}
                     onClick={() => { /* ... */ }}>
                       {("title" in item) ? (
-                        <Link key={item.id} to={`/movie/${item.id}`} className='card movie-link'>
+                        <Link key={item.id} to={`/streamify/movie/${item.id}`} className='card movie-link'>
                           <img src={`https://image.tmdb.org/t/p/w780${item.poster_path}`} alt={item.title} className='img' />
                           <h5 className='movie-title'>{item.title}</h5>
                           <p className='rating'>Rating: {renderStars(item.vote_average)}</p>  
                         </Link>
                       ) : (
-                        <Link key={item.id} to={`/serie/${item.id}`} className='card series-link'>
+                        <Link key={item.id} to={`/streamify/serie/${item.id}`} className='card series-link'>
                           <img src={`https://image.tmdb.org/t/p/w780${item.poster_path}`} alt={item.name} className='img' />
                           <h5 className='series-title'>{item.name}</h5>
                           <p className='rating'>Rating: {renderStars(item.vote_average)}</p>
@@ -173,12 +188,18 @@ useEffect(() => {
             )}
           </div>
           <div className="d-flex">
-            <button className="registration px-3" type="button" onClick={handleLogout}>
-              Log Out
-            </button>
-            <Link className="nav-link" to="/profile">
+            {isAuthenticated() ? (
+              <button className="registration px-3" type="button" onClick={handleLogout}>
+                Log Out
+              </button>
+            ) : (
+              <button className="registration px-3" type="button" onClick={handleLogin}>
+                Log In
+              </button>
+            )}
+            <NavLink className="nav-link" to="/streamify/profile" onClick={handleProfileClick}>
               <FontAwesomeIcon icon={faUser} className="mx-4" />
-            </Link>
+            </NavLink>
           </div>
         </Navbar.Collapse>
       </Container>

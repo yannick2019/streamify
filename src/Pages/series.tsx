@@ -61,7 +61,7 @@ function Series() {
         <Row xs={1} sm={2} md={3} lg={4} xl={5} className='cardSeries g-4'>
           {series.map((serie) => (
             <Col key={serie.id}>
-              <Link to={`/serie/${serie.id}`} className='card serie-link'>
+              <Link to={`/streamify/serie/${serie.id}`} className='card serie-link'>
                 <img src={`https://image.tmdb.org/t/p/w300${serie.poster_path}`} alt={serie.name} className='img' />
                 <h5 className='serie-title'>{serie.name}</h5>
                 <p className='rating'>Rating: {renderStars(serie.vote_average)}</p>          

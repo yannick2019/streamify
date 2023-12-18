@@ -5,6 +5,7 @@ import Navbar from '../component/navbar';
 import Footer from '../component/footer';
 import "./serie.css"
 import SeriesSlider from '../component/series_component';
+import { Link } from 'react-router-dom';
 
 interface Serie {
   id: number;
@@ -60,7 +61,9 @@ const renderStars = (rating: number) => {
                 Rating: {renderStars(serie.vote_average)}
               </p>
               <p>{serie.overview}</p>
-              <button className="btn m-2">Watch Trailer</button>
+              <Link to={`/streamify/movie/trailer/${serie.id}`} className="btn m-2">
+                Watch Trailer
+              </Link>
             </div>
           </div>
           <div className="col-md-6">

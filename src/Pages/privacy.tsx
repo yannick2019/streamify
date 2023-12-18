@@ -15,7 +15,7 @@ function privacy() {
       }}>PRIVACY POLICY </h1>
 
       <div className="icone1">
-        <Link className=" nav-link icone1" to="./login">
+        <Link className=" nav-link icone1" to="/streamify/login">
           <FontAwesomeIcon icon={faArrowLeft} className=" m-2   fs-6  icone2" />{" "}
           click to go back
         </Link>

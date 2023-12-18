@@ -4,7 +4,7 @@ const PrivateRoute = () => {
   const token = localStorage.getItem('token');
   const isAuth = !!token; // Check if the token exists
 
-  return isAuth ? <Outlet /> : <Navigate to="/login" />;
+  return isAuth ? <Outlet /> : <Navigate to="/streamify/login" />;
 };
 
 export default PrivateRoute;

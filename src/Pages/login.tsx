@@ -15,7 +15,7 @@ function Login() {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
       // Token exists, navigate to home or the appropriate authenticated route
-      navigate('/home');
+      navigate('/streamify/home');
     }
   }, [navigate]);
 
@@ -40,7 +40,7 @@ function Login() {
         // Set the token in state for future use
         setToken(token);
 
-        navigate('/home');
+        navigate('/streamify/home');
       } else {
         console.error('Login failed:', response.data.error);
       }
@@ -60,7 +60,7 @@ function Login() {
     setToken('');
 
     // Navigate to the login page or another appropriate route
-    navigate('/login');
+    navigate('/streamify/login');
   };
 
   return (
@@ -97,14 +97,14 @@ function Login() {
               </div>
               <div>
               <p className='text-end mt-2'>
-                Forgot <Link className='link_login' to={'/forgot-password'}>Password?</Link>
+                Forgot <Link className='link_login' to={'/streamify/forgot-password'}>Password?</Link>
               </p>
               </div>
               <div>
                 <p> If you don't have a account you can
-                <a href='signup' className='link_login ms-2'>
+                <a href='/streamify/signup' className='link_login ms-2'>
                   Register here
-                </a>
+                </a> | <a href='/streamify/home' className='link_login ms-2'>Home page</a>
               </p>
               </div>
             </form>

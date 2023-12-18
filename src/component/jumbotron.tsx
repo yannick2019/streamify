@@ -90,7 +90,7 @@ function Jumbotron() {
               <p style={{ color: "#0071b8", fontSize: "20px" }}>
                 Vote Average:{renderStars(movie.vote_average)} <br />
                 <Link
-                  to={`/movie/${movie.id}`}
+                  to={`/streamify/movie/${movie.id}`}
                   className="btn btn-primary  mt-2 "
                   style={{
                     width: "200px",
