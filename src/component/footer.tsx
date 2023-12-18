@@ -1,4 +1,5 @@
 import './footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -23,25 +24,25 @@ const Footer = () => {
           <div className="col-12 col-sm-6 col-md-3 mb-4 mt-4">
             <p className="h5 mb-4" style={{ fontWeight: 600 }}>Streamify</p>
             <div className="cursor-pointer">
-              <li className="liste1"><a className="link" href="/streamify/privacy">Privacy Policy</a></li>
-              <li className="liste1"><a className="link" href="/streamify/cookies">Cookies</a></li>
-              <li className="liste1"><a className="link" href="/streamify/profile">Profile</a></li>
+              <li className="liste1"><Link className="link" to={"/streamify/privacy"}>Privacy Policy</Link></li>
+              <li className="liste1"><Link className="link" to={"/streamify/cookies"}>Cookies</Link></li>
+              <li className="liste1"><Link className="link" to={"/streamify/profile"}>Profile</Link></li>
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-3 mb-4 mt-4">
             <p className="h5 mb-4" style={{ fontWeight: 600 }}>Help</p>
             <div className="cursor-pointer">
-              <li className="liste1"><a className="link" href="/streamify/signup">Sign Up</a></li>
-              <li className="liste1"><a className="link" href="/streamify/login">Sign In</a></li>
+              <li className="liste1"><Link className="link" to={"/streamify/signup"}>Sign Up</Link></li>
+              <li className="liste1"><Link className="link" to={"/streamify/login"}>Sign In</Link></li>
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-3 mb-4 mt-4">
             <p className="h5 mb-4" style={{ fontWeight: 600 }}>Pages</p>
             <div className="cursor-pointer">
-              <li className="liste1"><a className="link" href="/streamify/home">Home</a></li>
-              <li className="liste1"><a className="link" href="/streamify/movies">Movie</a></li>
-              <li className="liste1"><a className="link" href="/streamify/series">Tv Show</a></li>
-              <li className="liste1"><a className="link" href="/streamify/upcoming">Upcoming</a></li>/streamify
+              <li className="liste1"><Link className="link" to={"/streamify/home"}>Home</Link></li>
+              <li className="liste1"><Link className="link" to={"/streamify/movies"}>Movie</Link></li>
+              <li className="liste1"><Link className="link" to={"/streamify/series"}>Tv Show</Link></li>
+              <li className="liste1"><Link className="link" to={"/streamify/upcoming"}>Upcoming</Link></li>
             </div>
           </div>
         </div>
