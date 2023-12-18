@@ -6,6 +6,7 @@ import Footer from '../component/footer';
 import "./serie.css"
 import SeriesSlider from '../component/series_component';
 
+
 interface Serie {
   id: number;
   name: string;

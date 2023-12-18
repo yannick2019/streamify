@@ -102,9 +102,9 @@ function Login() {
               </div>
               <div>
                 <p> If you don't have a account you can
-                <a href='signup' className='link_login ms-2'>
+                <a href='/signup' className='link_login ms-2'>
                   Register here
-                </a>
+                </a> | <a href='/home' className='link_login ms-2'>Home Page</a>
               </p>
               </div>
             </form>

@@ -1,3 +1,7 @@
+
+
+
+
 import "./navbar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -5,7 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { IoClose } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from 'axios';
 
@@ -92,6 +96,21 @@ useEffect(() => {
     return fullStars;
   };
 
+  const isAuthenticated = () => {
+    return Boolean(localStorage.getItem('token'));
+  }
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+  const handleProfileClick = (e: React.MouseEvent) => {
+    if (!isAuthenticated()) {
+      e.preventDefault();
+      navigate('/login');
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
@@ -173,12 +192,18 @@ useEffect(() => {
             )}
           </div>
           <div className="d-flex">
-            <button className="registration px-3" type="button" onClick={handleLogout}>
-              Log Out
-            </button>
-            <Link className="nav-link" to="/profile">
+            {isAuthenticated() ? (
+              <button className="registration px-3" type="button" onClick={handleLogout}>
+                Log Out
+              </button>
+            ) : (
+              <button className="registration px-3" type="button" onClick={handleLogin}>
+                Log In
+              </button>
+            )}
+            <NavLink className="nav-link" to="/profile" onClick={handleProfileClick}>
               <FontAwesomeIcon icon={faUser} className="mx-4" />
-            </Link>
+            </NavLink>
           </div>
         </Navbar.Collapse>
       </Container>
@@ -187,4 +212,5 @@ useEffect(() => {
 }
 
 export default NavScrollExample;
+
 
