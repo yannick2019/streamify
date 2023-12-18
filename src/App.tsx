@@ -39,12 +39,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/serie_slider" element={<SeriesSlider />} />
         <Route path="/slider" element={<Slider />} />
-          <Route path="/" element={<Presentation />} />
+          <Route path="/streamify" element={<Presentation />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/home" element={<Home />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/footer" element={<Footer />} />
-          <Route path='/movies' element={<Movies /> } />
+          <Route path='/' element={<Movies /> } />
           <Route path='/series' element={<Series /> } />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
