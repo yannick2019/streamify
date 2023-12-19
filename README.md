@@ -39,15 +39,15 @@ See the website live [here](https://yannick2019.github.io/streamify/)
 - ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat)
 
 ## Development
-`git clone git@github.com:emignox/getflixProject.git`
+`git clone git@github.com:emignox/streamify.git`
 
 ### Frontend
-- `cd getflixProject`
+- `cd streamify`
 - `cd front-project`
 - `pnpm install ...to install dependencies`
 - `pnpm run dev ... to start developing`
 ### Backend
-- `cd getflixProject`
+- `cd streamify`
 - `cd api`
 - `php -S localhost:${PORT} or use MAMP/XAMPP/WAMP`
 
