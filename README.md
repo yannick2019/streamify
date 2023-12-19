@@ -39,7 +39,7 @@ See the website live [here](https://yannick2019.github.io/streamify/)
 - ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat)
 
 ## Development
-`git clone git@github.com:emignox/streamify.git`
+`git clone git@github.com:yannick2019/streamify.git`
 
 ### Frontend
 - `cd streamify`
