@@ -1,6 +1,6 @@
 {
   "name": "front-project",
-  "private": true,
+  "private": false,
   "homepage": "https://yannick2019.github.io/streamify",
   "version": "0.0.0",
   "type": "module",
