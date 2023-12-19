@@ -118,7 +118,7 @@ const handleLogin = async (e: React.FormEvent) => {
                 <p> If you don't have a account you can
                 <Link to={'/streamify/signup'} className='link_login ms-2'>
                   Register here
-                </Link> | <Link to={'/streamify/home'} className='link_login ms-2'>Home page</Link>
+                </Link>
               </p>
               </div>
             </form>

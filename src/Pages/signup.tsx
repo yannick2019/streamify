@@ -1,7 +1,7 @@
 // import { Link } from 'react-router-dom';
 import { FormEvent } from 'react';
 import { ChangeEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './login_singup.css';
 
 function Signup() {
@@ -15,6 +15,7 @@ function Signup() {
   });
 
   const [registrationMessage, setRegistrationMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,7 +41,7 @@ function Signup() {
 
           // Use setTimeout for redirection after a delay (e.g., 2000 milliseconds)
           setTimeout(() => {
-            window.location.href = '/streamify/login';
+            navigate('/streamify/login');
           }, 2000);
         } else {
           setRegistrationMessage('Registration failed. Please try again.');
