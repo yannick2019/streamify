@@ -24,9 +24,10 @@ import TopRatedMovies from './component/top_rated_movies';
 import Upcoming from './Pages/upcoming';
 import AccessData from './Pages/change_access_data';
 import Subscribe from './Pages/subscribe';
-//import PrivateRoute from './component/PrivateRoute';
+import PrivateRoute from './component/PrivateRoute';
 
 
+/*
 function App() {
   return (
     <>
@@ -36,12 +37,10 @@ function App() {
           <Route path="/streamify/top_rated_movies" element={<TopRatedMovies/>} />
           <Route path="/streamify/top_rated" element={<TopRatedSeries/>} />
           <Route path="/streamify/profile" element={<Profile/>} />
-          <Route path="/streamify/streamify/home" element={<Home />} />
+          <Route path="/streamify/home" element={<Home />} />
           <Route path="/streamify/serie_slider" element={<SeriesSlider />} />
           <Route path="/streamify/slider" element={<Slider />} />
           <Route path="/streamify/" element={<Presentation />} />
-          <Route path="/streamify/profile" element={<Profile />} />
-          <Route path="/streamify/home" element={<Home />} />
           <Route path="/streamify/privacy" element={<Privacy />} />
           <Route path="/streamify/footer" element={<Footer />} />
           <Route path='/streamify/movies' element={<Movies /> } />
@@ -68,41 +67,35 @@ function App() {
 }
 
 export default App;
-
+*/
 
 
 /*  Private routes  */
 
-/*
 function App() {
   return (
     <>
       <Router>
         <Routes>
           <Route element={<PrivateRoute/>}>
-            <Route path='/home' element={<Home/>}/>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/footer" element={<Footer />} />
-            <Route  path='/movies' element={ <Movies /> } />
-            <Route path="/movie/:id" element={ <SingleMovie /> } />
-            <Route path="/upcoming" element={<Upcoming /> } />
-            <Route path='/series' element={<Series /> } />
-            <Route path="/serie/:id" element={ <SingleSerie /> } />    
-            <Route path="/serie/trailer/:id" element={ <TrailerPage /> } />
-            <Route path="/top_rated" element={<TopRatedSeries/>} />
-            <Route path="/top_rated_movies" element={<TopRatedMovies/>} />
-            <Route path="/update-data/:username" element={<AccessData/>} />
-            <Route path="/subscribe" element={<Subscribe /> } />
-            <Route path="/slider" element={<Slider />} />
-            <Route path="/serie_slider" element={<SeriesSlider />} />
-            <Route path="/movie/trailer/:id" element={ <TrailerPage /> } />
-
-
-            
-
-
-            <Route path="/other" element={
+            <Route path="/streamify/home" element={<Home />} />
+            <Route path="/streamify/profile" element={<Profile/>} />
+            <Route path="/streamify/privacy" element={<Privacy />} />
+            <Route path="/streamify/footer" element={<Footer />} />
+            <Route path='/streamify/movies' element={<Movies /> } />
+            <Route path="/streamify/movie/:id" element={ <SingleMovie /> } />
+            <Route path="/streamify/upcoming" element={<Upcoming /> } />
+            <Route path='/streamify/series' element={<Series /> } />
+            <Route path="/streamify/serie/:id" element={ <SingleSerie /> } />   
+            <Route path="/streamify/serie/trailer/:id" element={ <TrailerPage /> } />
+            <Route path="/streamify/top_rated" element={<TopRatedSeries/>} />
+            <Route path="/streamify/top_rated_movies" element={<TopRatedMovies/>} />
+            <Route path="/streamify/update-data/:username" element={<AccessData/>} />
+            <Route path="/streamify/subscribe" element={<Subscribe /> } />
+            <Route path="/streamify/slider" element={<Slider />} />
+            <Route path="/streamify/serie_slider" element={<SeriesSlider />} />
+            <Route path="/streamify/movie/trailer/:id" element={ <TrailerPage /> } />
+            <Route path="/streamify/other" element={
               <>
                 <Navbar />
                 <Jumbotron />
@@ -110,11 +103,11 @@ function App() {
             } />
           </Route>
 
-          <Route path="/" element={<Presentation />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />          
+          <Route path="/streamify/" element={<Presentation />} />
+          <Route path="/streamify/login" element={<Login />} />
+          <Route path="/streamify/signup" element={<Signup />} />
+          <Route path="/streamify/forgot-password" element={<ForgotPassword />} />
+          <Route path="/streamify/reset-password" element={<ResetPassword />} />         
         </Routes>
       </Router>
     </>
@@ -123,4 +116,3 @@ function App() {
 
 export default App;
 
-*/

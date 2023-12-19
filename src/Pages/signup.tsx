@@ -1,7 +1,6 @@
 // import { Link } from 'react-router-dom';
 import { FormEvent } from 'react';
 import { ChangeEvent, useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './login_singup.css';
 
@@ -12,7 +11,7 @@ function Signup() {
     lastname: '',
     email: '',
     password: '',
-    role: 'user'
+    role: 'user',
   });
 
   const [registrationMessage, setRegistrationMessage] = useState('');
@@ -26,18 +25,28 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://streamify-api.000webhostapp.com/registration.php', formData);
-      console.log(response.data);
+      const response = await fetch('https://streamify-api.000webhostapp.com/registration.php', {
+        method: 'POST',
+        mode: "cors",
+        credentials: "omit",
+        body: JSON.stringify(formData),
+      });
 
-      if (response.data.status === '200') {
-        setRegistrationMessage('Successfully registered!');
+      if (response.ok) {
+        const data = await response.json();
 
-        // Use setTimeout for redirection after a delay (e.g., 2000 milliseconds)
-        setTimeout(() => {
-          window.location.href = '/streamify/login';
-        }, 2000);
+        if (data.status === '200') {
+          setRegistrationMessage('Successfully registered!');
+
+          // Use setTimeout for redirection after a delay (e.g., 2000 milliseconds)
+          setTimeout(() => {
+            window.location.href = '/streamify/login';
+          }, 2000);
+        } else {
+          setRegistrationMessage('Registration failed. Please try again.');
+        }
       } else {
-        setRegistrationMessage('Registration failed. Please try again.');
+        console.error('Registration failed:', response.statusText);
       }
     } catch (error) {
       console.error('Error during registration:', error);
@@ -47,10 +56,10 @@ function Signup() {
   return (
   <div className="overflow-hidden">
     <div className='signup_body template d-flex justify-content-center align-items-center vh-100'>
-    <div className='col-md-6 col-12 d-flex flex-column h-100'>
-            <div className='signup_card p-5 flex-fill'>
+      <div className='col-md-6 col-12 d-flex flex-column h-100'>
+        <div className='signup_card p-5 flex-fill'>
           <form className='h-100 d-flex flex-column justify-content-center' onSubmit={handleSubmit}>
-            <h3 className='text-center'>Sign Up</h3>
+            <h1 className="fw-bold pol text-center pb-4">Sign up</h1>
             <div className='mb-2'>
               <label htmlFor='username'>Username</label>
               <input

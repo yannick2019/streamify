@@ -32,7 +32,7 @@ function NavScrollExample() {
   const searchRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-const fetchMovies = async () => {
+  const fetchMovies = async () => {
     try {
       const response = await axios.get<{ movies: Movie[] }>("https://streamify-api.000webhostapp.com/get_movies.php");
       const data = response.data;
@@ -44,9 +44,9 @@ const fetchMovies = async () => {
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
-};
+  };
 
-const fetchSeries = async () => {
+  const fetchSeries = async () => {
     try {
       const response = await axios.get<{ series: Series[] }>("https://streamify-api.000webhostapp.com/get_series.php");
       const data = response.data;
@@ -58,9 +58,9 @@ const fetchSeries = async () => {
     } catch (error) {
       console.error('Error fetching series:', error);
     }
-};
+  };
 
-useEffect(() => {
+  useEffect(() => {
     fetchMovies();
     fetchSeries();
   }, []);
@@ -90,21 +90,6 @@ useEffect(() => {
     ));
 
     return fullStars;
-  };
-
-  const isAuthenticated = () => {
-    return Boolean(localStorage.getItem('token'));
-  }
-
-  const handleLogin = () => {
-    navigate('/streamify/login');
-  };
-
-  const handleProfileClick = (e: React.MouseEvent) => {
-    if (!isAuthenticated()) {
-      e.preventDefault();
-      navigate('/streamify/login');
-    }
   };
 
   const handleLogout = () => {
@@ -188,16 +173,11 @@ useEffect(() => {
             )}
           </div>
           <div className="d-flex">
-            {isAuthenticated() ? (
-              <button className="registration px-3" type="button" onClick={handleLogout}>
-                Log Out
-              </button>
-            ) : (
-              <button className="registration px-3" type="button" onClick={handleLogin}>
-                Log In
-              </button>
-            )}
-            <NavLink className="nav-link" to="/streamify/profile" onClick={handleProfileClick}>
+            <button className="registration px-3" type="button" onClick={handleLogout}>
+              Log Out
+            </button>
+           
+            <NavLink className="nav-link" to={"/streamify/profile"}>
               <FontAwesomeIcon icon={faUser} className="mx-4" />
             </NavLink>
           </div>

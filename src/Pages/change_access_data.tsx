@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import "./username.css";
 import { Link, useParams } from "react-router-dom";
-import axios from 'axios';
 
 
 function AccessData() {
@@ -17,41 +16,55 @@ function AccessData() {
   // Handle form submission
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+  
     if (newUsername || newEmail || newPassword) {
       try {
-        const response = await axios.post(`https://streamify-api.000webhostapp.com/update_profile.php?username=${username}`, {
-          username: routeUsername,
-          newUsername,
-          newEmail,
-          newPassword
+        const queryString = `username=${username}`;
+        const url = `https://streamify-api.000webhostapp.com/update_profile.php?${queryString}`;
+  
+        const response = await fetch(url, {
+          method: 'POST',
+          mode: "cors",
+          credentials: "omit",
+          body: JSON.stringify({
+            username: routeUsername,
+            newUsername,
+            newEmail,
+            newPassword,
+          }),
         });
-
-        if (response.data.success) {
-          if (newUsername) {
-            localStorage.setItem("username", newUsername);
-            window.location.assign(`/streamify/update-data/${newUsername}`);
+  
+        if (response.ok) {
+          const data = await response.json();
+  
+          if (data.success) {
+            if (newUsername) {
+              localStorage.setItem("username", newUsername);
+              window.location.assign(`/streamify/update-data/${newUsername}`);
+            } else {
+              window.location.assign(`/streamify/update-data/${username}`);
+            }
+            alert("Data has been saved.");
           } else {
-            window.location.assign(`/streamify/update-data/${username}`);
+            alert('Failed to update profile.');
           }
-          alert("Data has been saved.");
         } else {
-          alert('Failed to update profile.');
+          console.error('Failed to update profile:', response.statusText);
         }
-      }
-      catch (error) {
+      } catch (error) {
         console.error('Error updating profile:', error);
       }
     } else {
-      alert('Please fill out at least one fields.');
+      alert('Please fill out at least one field.');
     }
   };
+  
 
   return (
     <div className="user d-flex justify-content-center align-items-center vh-100">
       <div className="overlay position-absolute">
       </div>
       <div className="form-user text-center">
-        <h1 className="fw-bold pol">Profile</h1>
         <form onSubmit={handleSubmit}>
           <h2 className="fw-bold pol">Choose you new Username</h2>
           <label className="m-4" style={{ color: "#0071b8" }} htmlFor="">

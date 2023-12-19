@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
 
 function Login() {
 
@@ -20,17 +20,25 @@ function Login() {
   }, [navigate]);
 
   // Function to handle login
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    try {
-      const response = await axios.post('https://streamify-api.000webhostapp.com/login.php', {
+  try {
+    const response = await fetch('https://streamify-api.000webhostapp.com/login.php', {
+      method: 'POST',
+      mode: "cors",
+      credentials: "omit",
+      body: JSON.stringify({
         username: username,
         password: password,
-      });
+      }),
+    });
 
-      if (response.data && response.data.message === 'Connexion réussie') {
-        const { token, username, role } = response.data;
+    if (response.ok) {
+      const data = await response.json();
+
+      if (data && data.message === 'Connexion réussie') {
+        const { token, username, role } = data;
 
         // Store the token and user information in local storage
         localStorage.setItem('token', token);
@@ -42,12 +50,16 @@ function Login() {
 
         navigate('/streamify/home');
       } else {
-        console.error('Login failed:', response.data.error);
+        console.error('Login failed:', data.error);
       }
-    } catch (error) {
-      console.error('Login error:', error);
+    } else {
+      console.error('Login failed:', response.statusText);
     }
-  };
+  } catch (error) {
+    console.error('Login error:', error);
+  }
+};
+
 
   // Function to handle logout
   const handleLogout = () => {
@@ -69,7 +81,7 @@ function Login() {
         <div className='col-md-6 col-12 d-flex flex-column h-100'>
           <div className='signup_card p-5 flex-fill'>
             <form className='h-100 d-flex flex-column justify-content-center' onSubmit={handleLogin}>
-              <h3 className='text-center'>Log In</h3>
+              <h1 className="fw-bold pol text-center pb-4">Log in</h1>
               <div className='mb-2'>
                 <label htmlFor='username'>Username</label>
                 <input
@@ -78,6 +90,7 @@ function Login() {
                   className='form-control'
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
+                  required
                 />
               </div>
               <div className='mb-2'>
@@ -88,6 +101,7 @@ function Login() {
                   className='form-control'
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
               <div className='mt-2 mb-2'>
