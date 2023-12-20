@@ -27,7 +27,7 @@ const ForgotPassword = () => {
       }
     } catch (error) {
       console.error('Error initiating password reset:', error);
-      setMessage('An error occurred. Please try again later.');
+      setMessage('Please check your email. If you did not receive email, try again.');
     } finally {
       setIsLoading(false);
     }
