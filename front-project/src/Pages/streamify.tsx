@@ -7,7 +7,7 @@ function Presentation() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/home");
+      navigate("/streamify/home");
     }, 9000); // Cambia questo valore per farlo coincidere con la durata dell'animazione CSS
 
     return () => clearTimeout(timer); // Pulisce il timer se il componente viene smontato
