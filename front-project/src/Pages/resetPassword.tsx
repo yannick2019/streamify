@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import axios from 'axios';
 import './reset_forgot.css';
 
 const ResetPassword = () => {
@@ -17,12 +16,19 @@ const ResetPassword = () => {
     try {
       setLoading(true);
       const token = new URLSearchParams(window.location.search).get('token');
-      const response = await axios.post('https://streamify-api.000webhostapp.com/reset_password.php', {
-        token,
-        new_password: password,
+      const response = await fetch('https://streamify-api.000webhostapp.com/reset_password.php', {
+        method: 'POST',
+        mode: "cors",
+        credentials: "omit",
+        body: JSON.stringify({
+          token,
+          new_password: password,
+        })
       });
-
-      setMessage(response.data.message);
+    
+      const data = await response.json();
+    
+      setMessage(data.message);
     } catch (error) {
       console.error('Error resetting password:', error);
       setMessage('An error occurred. Please try again later.');
