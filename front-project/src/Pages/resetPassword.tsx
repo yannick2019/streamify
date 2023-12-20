@@ -20,9 +20,6 @@ const ResetPassword = () => {
         method: 'POST',
         mode: "cors",
         credentials: "omit",
-        headers: {
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify({
           token,
           new_password: password,

@@ -13,9 +13,6 @@ const ForgotPassword = () => {
         method: 'POST',
         mode: "cors",
         credentials: "omit",
-        headers: {
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify({
           email: email,
         })
