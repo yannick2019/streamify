@@ -22,7 +22,7 @@ function TopRatedSeries() {
         const data = response.data;
         //console.log('Response data:', data);
         if (data && data.top_rated_series) { // Check if data.top_rated_movies exists
-          console.log(data.top_rated_series);
+          console.log("success");
           setSeries(data.top_rated_series); // Set data.top_rated_movies as the movies
         } else {
           console.error('Invalid data structure received from the server');

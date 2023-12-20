@@ -29,7 +29,7 @@ function Jumbotron() {
         const response = await axios.get(apiUrl);
         const data = response.data;
 
-        console.log("Response data:", data);
+        //console.log("Response data:", data);
 
         if (data && data.movies && data.movies.length > 0) {
           const randomIndex = Math.floor(Math.random() * data.movies.length);
