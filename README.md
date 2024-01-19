@@ -42,13 +42,13 @@ See the website live [here](https://yannick2019.github.io/streamify/)
 `git clone git@github.com:yannick2019/streamify.git`
 
 ### Frontend
-- `cd streamify`
-- `cd front-project`
+- `cd /streamify`
+- `cd /front-project`
 - `pnpm install ...to install dependencies`
 - `pnpm run dev ... to start developing`
 ### Backend
-- `cd streamify`
-- `cd api`
+- `cd /streamify`
+- `cd /api`
 - `php -S localhost:${PORT} or use MAMP/XAMPP/WAMP`
 
 ## Copyright - 2023
